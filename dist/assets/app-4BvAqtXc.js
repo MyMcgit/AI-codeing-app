@@ -1,0 +1,1 @@
+import{G as a,m as o}from"./index-Cx49DbP6.js";function r(e){return JSON.parse(JSON.stringify(e))}const f=a("app",()=>{const e=o(""),n=o([]),s=o([]);function i(t){e.value=t}function u(t){n.value=r(t)}function c(t){s.value=r(t)}return{title:e,productList:n,categoryList:s,setTitle:i,setProductList:u,setCategoryList:c}});export{f as u};

@@ -1,0 +1,1 @@
+import{d as t,p as n,a,t as s,j as r,m as c,o as u}from"./index-Cx49DbP6.js";const m=t({__name:"NotFound",setup(l){const e=r(),o=c(404);return n(()=>{e.path==="/1"&&console.log(333)}),(p,_)=>(u(),a("div",null,s(o.value),1))}});export{m as default};

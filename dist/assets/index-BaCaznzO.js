@@ -1,0 +1,1 @@
+import{d as t,p as o,a as n,t as a,m as s,o as r}from"./index-Cx49DbP6.js";const u=t({__name:"index",setup(l){const e=s([1,2,3]);return o(()=>{setTimeout(()=>{e.value[2]=5,console.log(5)},3e3)}),(c,i)=>(r(),n("div",null,a(e.value.toString()),1))}});export{u as default};
