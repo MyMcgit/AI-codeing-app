@@ -1,0 +1,25 @@
+
+.detail{
+    .left_title{
+        span{
+            font-size: 20px;
+        }
+        
+    }
+    .prod_item{
+        display: flex;
+        align-items: center;
+        .prod_name{
+        font-size: 20px;
+        font-weight: bold;
+        }
+        .prod_content{
+            display: inline-block;
+        }
+    }
+    
+    .img{
+        height: 100px;
+    }
+    
+}
