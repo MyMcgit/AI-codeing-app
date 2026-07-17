@@ -30,6 +30,11 @@ declare module '@ant-design/icons' {
   export const LockOutlined: React.ComponentType<any>;
   export const FullscreenOutlined: React.ComponentType<any>;
   export const FullscreenExitOutlined: React.ComponentType<any>;
+  export const ReloadOutlined: React.ComponentType<any>;
+  export const DownOutlined: React.ComponentType<any>;
+  export const UpOutlined: React.ComponentType<any>;
+  export const EyeOutlined: React.ComponentType<any>;
+  export const EditOutlined: React.ComponentType<any>;
 }
 
 declare module 'react-draft-wysiwyg' {

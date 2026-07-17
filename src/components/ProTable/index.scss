@@ -1,0 +1,181 @@
+// ==================== ProTable 通用表格组件样式 ====================
+
+.pro-table-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0; // flex 子元素允许收缩到小于内容高度
+  background: #fff;
+  border-radius: 8px;
+  padding: 16px;
+  box-sizing: border-box;
+
+  // ========== 搜索表单区域 ==========
+  .pro-table-search {
+    flex-shrink: 0;
+    padding-bottom: 8px;
+    margin-bottom: 12px;
+
+    .ant-form-inline {
+      flex-wrap: wrap;
+    }
+  }
+
+  // ========== 工具栏区域 ==========
+  .pro-table-toolbar {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding-bottom: 8px;
+    margin-bottom: 8px;
+    font-size: 13px;
+    color: #999;
+  }
+
+  // ========== 表格主体区域 ==========
+  .pro-table-body {
+    flex: 1;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  // 自己的 scroll 容器（替代 antd 的 .ant-table-body）
+  .pro-table-scroll-container {
+    // 表头固定：sticky 相对于此滚动容器
+    .ant-table-thead > tr > th {
+      position: sticky;
+      top: 0;
+      z-index: 2;
+      background: #fafafa;
+    }
+
+    // antd 内部的 .ant-table-body 不处理垂直滚动
+    .ant-table-body {
+      overflow: visible !important;
+      will-change: transform;
+    }
+
+    // antd 内部布局填充
+    .ant-table-wrapper,
+    .ant-spin-nested-loading,
+    .ant-spin-container,
+    .ant-table {
+      height: 100%;
+    }
+  }
+
+  // ========== 分页器区域 ==========
+  .pro-table-pagination {
+    flex-shrink: 0;
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 10px;
+  }
+}
+
+// ==================== 斑马纹 ====================
+.pro-table-striped {
+  .ant-table-tbody {
+    tr:nth-child(even) {
+      background-color: #fafafa;
+    }
+    tr:nth-child(odd) {
+      background-color: #fff;
+    }
+    // hover 高亮覆盖
+    tr:hover > td {
+      background-color: #e6f7ff !important;
+    }
+  }
+}
+
+// ==================== 列宽拖拽 handle ====================
+.pro-table-header-cell {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  min-width: 0;
+
+  .pro-table-header-title {
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .pro-table-resize-handle {
+    flex-shrink: 0;
+    width: 8px;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    cursor: col-resize;
+    z-index: 1;
+
+    // 拖拽热区可视化（hover 时显示竖线）
+    &::after {
+      content: '';
+      position: absolute;
+      right: 3px;
+      top: 25%;
+      height: 50%;
+      width: 2px;
+      background: transparent;
+      border-radius: 1px;
+      transition: background 0.2s;
+    }
+
+    &:hover::after {
+      background: #d9d9d9;
+    }
+
+    &:active::after {
+      background: #1677ff;
+    }
+  }
+}
+
+// 表头 th 需要 relative 定位
+.ant-table-thead > tr > th {
+  position: relative;
+}
+
+// ==================== 响应式 ====================
+@media (max-width: 768px) {
+  .pro-table-container {
+    padding: 8px;
+
+    .pro-table-search {
+      .ant-form-inline {
+        .ant-form-item {
+          width: 100%;
+          margin-right: 0;
+
+          .ant-select,
+          .ant-picker,
+          input {
+            width: 100% !important;
+          }
+        }
+      }
+    }
+
+    .pro-table-pagination {
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .pro-table-toolbar {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  }
+}

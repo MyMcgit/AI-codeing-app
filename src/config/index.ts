@@ -3,5 +3,5 @@ export const BASE_URL = '' //发送请求基本路经，当前在开发环境，
 export const BASE_URL_WEATHER = ''
 export const CITY = 510100  //天气请求的城市编码，成都
 export const WEATHER_AK = 'a9c1f9ab4f54966eb0ef4b7508b696ed' // 天气请求的密匙，我个人的高德
-export const PAGE_SIZE = 5 //表格每页的条数配置
+export const PAGE_SIZE = 20 //表格每页的条数配置
 export const PRIMARY = 'rgb(0, 154, 126 )' //主题颜色配置
